@@ -26,6 +26,14 @@ public class SkinFactory implements LayoutInflaterFactory {
     //把所有需要换肤的控件进行缓存
     private Map<View, SkinItem> map = new HashMap<>();
 
+    /**
+     * setFactory后必走的方法(在里面拦截view的创建)
+     * @param parent
+     * @param name
+     * @param context
+     * @param attrs
+     * @return
+     */
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
         Log.i("TAG", "name：" + name);
@@ -89,9 +97,10 @@ public class SkinFactory implements LayoutInflaterFactory {
 
     /**
      * 去创建全类名为name的一个类(View)的实例
+     *
      * @param context
      * @param attrs
-     * @param name 控件全类名
+     * @param name    控件全类名
      * @return
      */
     private View createView(Context context, AttributeSet attrs, String name) {

@@ -2,13 +2,9 @@ package com.zkx.skinchange;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
-import java.io.File;
-
+//注意点：不能继承AppCompatActivity，因为AppCompatActivity已经setFactory了，再次设置会重复，会报错
 public class SkinActivity extends Activity {
     SkinFactory skinFactory;
 
